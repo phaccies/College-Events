@@ -1,3 +1,4 @@
+//login
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
@@ -21,7 +22,7 @@ $conn = new mysqli("localhost", "knight_user", "activate!", "knightsocial");
 if ($conn->connect_error) {
     returnWithError($conn->connect_error);
 } else {
-    $stmt = $conn->prepare("SELECT name, email, password, role, university_id FROM Users WHERE email = ?");
+    $stmt = $conn->prepare("SELECT user_id, name, email, password, role, university_id FROM Users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -30,9 +31,12 @@ if ($conn->connect_error) {
         if ($password === $row['password']) { // Use password_verify() if hashed
             $_SESSION['email'] = $row['email'];
             $_SESSION['role'] = $row['role'];
+            $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['university_id'] = $row['university_id'];
             $_SESSION['name'] = $row['name'];
-            returnWithInfo($row['name'], $row['email']);
+            returnWithInfo($row['user_id'], $row['name'], $row['email'], $row['role'], $row['university_id']);
+
+
         } else {
             returnWithError("Invalid Password");
         }
@@ -56,9 +60,17 @@ function returnWithError($err)
     sendResultInfoAsJson($retValue);
 }
 
-function returnWithInfo($name, $email)
+function returnWithInfo($user_id, $name, $email, $role, $university_id)
 {
-    $retValue = '{"name":"' . $name . '","email":"' . $email . '","error":""}';
+    $retValue = json_encode([
+        "user_id" => $user_id,
+        "name" => $name,
+        "email" => $email,
+        "role" => $role,
+        "university_id" => $university_id,
+        "error" => ""
+    ]);
     sendResultInfoAsJson($retValue);
 }
+
 ?>
