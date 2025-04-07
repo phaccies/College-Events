@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – Knight Social</title>
+  <link rel="stylesheet" href="login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="login-body">
+  <div class="login-container">
+    <h2>Login to Knight Social</h2>
+    <input type="email" id="loginEmail" placeholder="Email Address" required />
+    <input type="password" id="loginPassword" placeholder="Password" required />
+    <button onclick="doLogin()" class="btn">Login</button>
+    <p id="loginResult"></p>
+    <p class="signup-text">Don't have an account? <a href="../register/">Sign up</a></p>
+  </div>
+
+  <script src="/JS/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up – Knight Social</title>
+  <link rel="stylesheet" href="signup.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="signup-body">
+  <div class="signup-container">
+    <h2>Create Your Account</h2>
+
+    <input type="text" id="signupFullName" placeholder="Full Name" required />
+    <input type="email" id="signupEmail" placeholder="Email Address" required />
+    <input type="password" id="signupPassword" placeholder="Password" required />
+
+    <button onclick="doRegister()" class="btn">Sign Up</button>
+
+
+    <p id="signupResult"></p>
+
+    <div id="loginButtonWrapper" style="display: none;">
+      <button onclick="window.location.href='../login/'" class="btn">Login</button>
+    </div>
+
+  </div>
+
+  <script src="../../JS/register.js"></script>
+</body>
+</html>
