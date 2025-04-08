@@ -68,3 +68,28 @@
     color: #ccc;
     padding: 10px;
   }
+
+  /* Dropdown styling */
+select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  background-color: #f9f9f9;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+select:focus {
+  border-color: #4a90e2;
+  background-color: #fff;
+}
+
+option {
+  font-size: 14px;
+  padding: 10px;
+}
