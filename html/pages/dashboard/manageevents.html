@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Events – Knight Social</title>
+  <link rel="stylesheet" href="superadmin.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="dashboard-container">
+    <header>
+      <h1>Knight Social 🎓</h1>
+      <p id="user-info">Hello, Super Admin | Role: Super Admin</p>
+      <a href="superadmin.html" class="logout-btn">← Back to Dashboard</a>
+    </header>
+
+    <main>
+      <h2>Manage Events</h2>
+      <p>Approve, deny, or review events submitted by admins.</p>
+
+      <div class="card wide">
+        <h3>Events Pending Approval</h3>
+        <div id="pending-events">
+          <!-- Placeholder content -->
+          <div class="event-card">
+            <h4>Field Day Fun</h4>
+            <p><strong>Date:</strong> April 21, 2025</p>
+            <p><strong>Location:</strong> Memory Mall</p>
+            <p><strong>Description:</strong> Shake off finals week with food, music, and games!</p>
+            <button onclick="approveEvent(1)"> Approve</button>
+            <button onclick="rejectEvent(1)"> Deny</button>
+          </div>
+
+          <div class="event-card">
+            <h4>Harry Potter Costume Night</h4>
+            <p><strong>Date:</strong> April 18, 2025</p>
+            <p><strong>Location:</strong> Engineering 2, Room 101</p>
+            <p><strong>Description:</strong> Represent your Hogwarts House in style.</p>
+            <button onclick="approveEvent(2)"> Approve</button>
+            <button onclick="rejectEvent(2)">Deny</button>
+          </div>
+
+          <!-- Add more placeholder events as needed -->
+        </div>
+      </div>
+      <div class="card wide">
+        <h3>Upcoming Events</h3>
+        <div id="approved-events">
+          <!-- Placeholder content -->
+          <h4>Fantasy Football Competition</h4>
+          <p><strong>Date:</strong> April 11, 2025</p>
+          <p><strong>Location:</strong> Student Union Second Floor</p>
+          <p><strong>Description:</strong> Put your best foot forward and compete for numerous prizes!</p>
+          <!--  <p><em>No approved events yet.</em></p> -->
+        </div>  
+    </main>
+  </div>
+
+  <script>
+    function approveEvent(id) {
+      alert(`Event ID ${id} approved! (Hook up backend to process this)`);
+    }
+
+    function rejectEvent(id) {
+      alert(`Event ID ${id} rejected. (Hook up backend to process this)`);
+    }
+  </script>
+</body>
+</html>
