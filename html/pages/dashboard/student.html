@@ -12,7 +12,7 @@
     <header>
       <h1>Welcome to Knight Social 🎓</h1>
       <p id="user-info">Hello, [User Name]! | Role: [Role]</p>
-      <a onclick="doLogout();" class="logout-btn">Log out</a>
+   
     </header>
 
     <main>
@@ -34,8 +34,39 @@
           <p>Message, follow, and team up with students from UCF, USF, and UF.</p>
         </div>
       </div>
+
+      <div class="card">
+        <h3>Your University's RSOs</h3>
+        <ul id="rso-list">
+          <!-- RSOs will be inserted here by JavaScript -->
+        </ul>
+      </div>
+
+
+        <!-- Public Events -->
+        <div class="event-card-grid">
+
+          <div class="event-card">
+            <h3>Your RSO Events</h3>
+            <div class="event-list" id="rso-events-list"></div>
+          </div>
+
+          <div class="event-card">
+            <h3>Public Events</h3>
+            <div class="event-list" id="public-events-list"></div>
+          </div>
+
+        
+  
+        </div>
+
+
     </main>
+
+    <a onclick="doLogout();" class="logout-btn">Log out</a>
   </div>
+
+  
 
   <script src="../../JS/student.js"></script>
 </body>
