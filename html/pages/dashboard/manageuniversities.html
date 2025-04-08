@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Universities – Knight Social</title>
+  <link rel="stylesheet" href="superadmin.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="dashboard-container">
+    <header>
+      <h1>Knight Social 🎓</h1>
+      <p id="user-info">Hello, Super Admin | Role: Super Admin</p>
+      <a href="superadmin.html" class="logout-btn">← Back to Dashboard</a>
+    </header>
+
+    <main>
+      <h2>Manage Universities</h2>
+      <p>Add a new university or review existing ones.</p>
+
+      <div class="card-grid">
+        <!-- Form Card -->
+        <div class="card wide">
+          <h3>Add a new University</h3>
+          <form id="university-form">
+            <label for="name">University Name:</label>
+            <input type="text" id="name" name="name" placeholder="e.g., UCF" required />
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="e.g., Orlando, FL" required />
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="3" placeholder="Brief description..." required></textarea>
+
+            <label for="students">Number of Students:</label>
+            <input type="number" id="students" name="students" min="0" required />
+
+            <label for="picture">Picture URL (optional):</label>
+            <input type="url" id="picture" name="picture" placeholder="https://..." />
+
+            <button type="submit">Add University</button>
+          </form>
+        </div>
+
+        <!-- View Card -->
+        <div class="card wide">
+          <h3>Universities List</h3>
+          <p>This section will display universities you've added.</p>
+          <div id="universities-list">
+            <!-- This can later be populated dynamically via JavaScript or PHP -->
+            <p><em>No universities added yet.</em></p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // needs backend
+    document.getElementById('university-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("University added... (Only frontend – needs backend)");
+    });
+  </script>
+</body>
+</html>
