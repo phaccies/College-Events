@@ -60,10 +60,18 @@
   }
   
   .card {
+    margin-top: 30px;
     background-color: #2a2a40;
     padding: 25px;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   }
   
   .card h3 {
