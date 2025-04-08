@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -78,3 +79,68 @@
     margin-bottom: 10px;
     color: #f5b841;
   }
+
+
+
+
+
+
+/* ---------------------------------- */
+
+.event-form {
+    background-color: #2a2a40;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #f5b841;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #3a3a55;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: #bbb;
+  }
+  
+  .submit-btn {
+    padding: 12px 25px;
+    background-color: #f5b841;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #ffc107;
+  }
+
+  #map {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  
