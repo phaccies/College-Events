@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="addEvent.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
-  
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
+  <button class="back" onclick="window.location.href='../dashboard/admin.html'">Back</button>
   <div class="dashboard-container">
     <header>
       <h1>Create an Event</h1>
@@ -28,6 +28,18 @@
       </div>
 
       <div class="form-group">
+        <label for="rso">Select RSO</label>
+        <select id="rso" name="rso" required></select>
+        </select>
+    </div>
+    
+      <div>
+  <label>Privacy:</label>
+  <input type="radio" id="public" name="privacy" value="public" checked> Public
+  <input type="radio" id="private" name="privacy" value="private"> Private
+</div>
+
+      <div class="form-group">
         <label for="description">Description</label>
         <textarea id="description" name="description" rows="4" required></textarea>
       </div>
@@ -38,6 +50,12 @@
         <button type="button" id="findAddressBtn" class="submit-btn" style="margin-top: 10px;">Find on Map</button>
       </div>
       
+      <div class="form-group">
+        <label for="eventDate">Event Date</label>
+        <input type="date" id="eventDate" name="eventDate" required />
+      </div>
+      
+
       <div class="form-group">
         <label for="eventTime">Time</label>
         <input type="time" id="eventTime" name="eventTime" required />
@@ -73,7 +91,7 @@
         <input type="email" id="contactEmail" name="contactEmail" required />
       </div>
 
-      <button type="submit" class="submit-btn">Create Event</button>
+      <button type="button" class="submit-btn" onclick="handleFormSubmit()">Create Event</button>
     </form>
   </div>
 
@@ -138,6 +156,8 @@
     updateLatLngFields(marker.getLatLng());
   </script>
   
+
+<script src="../../JS/addEvent.js"></script>
 
   
 </body>
