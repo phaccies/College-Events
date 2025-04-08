@@ -18,7 +18,7 @@ $name = trim($inData["name"]);
 $email = trim($inData["email"]);
 $password = trim($inData["password"]);
 $role = isset($inData["role"]) ? trim($inData["role"]) : "student";
-$university_id = isset($inData["university_id"]) ? intval($inData["university_id"]) : 1;
+$university_id = isset($inData["university_id"]) ? intval($inData["university_id"]) : 4;
 
 // Connect to database
 $conn = new mysqli("localhost", "knight_user", "activate!", "knightsocial");
