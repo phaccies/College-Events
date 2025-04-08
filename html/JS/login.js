@@ -23,15 +23,14 @@ function doLogin() {
 		if (data.error) {
 			result.textContent = data.error;
 		} else {
-			// ✅ Store all user data in localStorage
 			localStorage.setItem("user_id", data.user_id);
 			localStorage.setItem("email", data.email);
 			localStorage.setItem("name", data.name);
 			localStorage.setItem("role", data.role);
 			localStorage.setItem("university_id", data.university_id);
 
-			// ✅ Redirect to dashboard
-			window.location.href = "/html/pages/dashboard";
+			window.location.href = "../dashboard/";
+			console.log("Hello I'm here!");
 		}
 	})
 	.catch(err => {

@@ -25,6 +25,5 @@ document.addEventListener("DOMContentLoaded", () => {
 function doLogout() 
 {
   localStorage.clear();
-
   window.location.href = "../../index.html";
 }
