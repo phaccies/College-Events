@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="addEvent.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
-  
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
@@ -26,6 +25,14 @@
         <label for="eventCategory">Event Category</label>
         <input type="text" id="eventCategory" name="eventCategory" required />
       </div>
+
+      <div class="form-group">
+        <label for="rso">Select RSO</label>
+        <select id="rso" name="rso" required>
+            <option value="">Select an RSO</option>
+        </select>
+    </div>
+    
 
       <div class="form-group">
         <label for="description">Description</label>
@@ -137,7 +144,8 @@
   
     updateLatLngFields(marker.getLatLng());
   </script>
-  
+
+<script src="../../JS/addEvent.js"></script>
 
   
 </body>

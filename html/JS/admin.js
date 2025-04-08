@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
     const userInfo = document.getElementById("user-info");
     userInfo.textContent = `Hello, ${name}! | Role: ${role}`;
+
+    
   
     /*const roleText = document.querySelector("main > p");
     if (role === "admin") {
