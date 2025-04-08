@@ -29,7 +29,7 @@ function doLogin() {
 			localStorage.setItem("role", data.role);
 			localStorage.setItem("university_id", data.university_id);
 
-			window.location.href = "../dashboard/";
+			window.location.href = "../dashboard/student.html";
 			console.log("Hello I'm here!");
 		}
 	})
