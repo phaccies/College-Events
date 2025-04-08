@@ -28,8 +28,14 @@ function doLogin() {
 			localStorage.setItem("name", data.name);
 			localStorage.setItem("role", data.role);
 			localStorage.setItem("university_id", data.university_id);
-
-			window.location.href = "../dashboard/student.html";
+			
+			if (data.role === "student") {
+				window.location.href = "../dashboard/student.html";
+			} else if (data.role === "admin") {
+				window.location.href = "../dashboard/admin.html";
+			} else if (data.role === "super_admin") {
+				window.location.href = "../dashboard/superadmin.html";
+			} 
 			console.log("Hello I'm here!");
 		}
 	})
