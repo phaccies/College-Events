@@ -1,29 +1,23 @@
-//dashboard.js
-const urlBase = "http://knightsocial.space/php";
-const extension = "php";
-
+// dashboard.js
 document.addEventListener("DOMContentLoaded", () => {
-  fetch(`${urlBase}/getUserInfo.${extension}`)
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.error) {
-        window.location.href = "/html/pages/login/index.html";
-        return;
-      }
+  const name = localStorage.getItem("name");
+  const role = localStorage.getItem("role");
 
-      const userInfo = document.getElementById("user-info");
-      userInfo.textContent = `Hello, ${data.name}! | Role: ${data.role}`;
+  if (!name || !role) {
+    // Redirect to login if info is missing
+    window.location.href = "/html/pages/login/index.html";
+    return;
+  }
 
-      const roleText = document.querySelector("main > p");
-      if (data.role === "admin") {
-        roleText.textContent = "This is your admin dashboard. You can manage users and system settings.";
-      } else if (data.role === "super_admin") {
-        roleText.textContent = "This is your super admin dashboard. You have full system access.";
-      } else {
-        roleText.textContent = "This is your student dashboard. You can explore events, update your profile, and more!";
-      }
-    })
-    .catch((err) => {
-      console.error("Error loading user info:", err);
-    });
+  const userInfo = document.getElementById("user-info");
+  userInfo.textContent = `Hello, ${name}! | Role: ${role}`;
+
+  const roleText = document.querySelector("main > p");
+  if (role === "admin") {
+    roleText.textContent = "This is your admin dashboard. You can manage users and system settings.";
+  } else if (role === "super_admin") {
+    roleText.textContent = "This is your super admin dashboard. You have full system access.";
+  } else {
+    roleText.textContent = "This is your student dashboard. You can explore events, update your profile, and more!";
+  }
 });
