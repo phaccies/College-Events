@@ -12,18 +12,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const userInfo = document.getElementById("user-info");
   userInfo.textContent = `Hello, ${name}! | Role: ${role}`;
 
-  /*const roleText = document.querySelector("main > p");
+  const roleText = document.querySelector("main > p");
   if (role === "admin") {
     roleText.textContent = "This is your admin dashboard. You can manage users and system settings.";
   } else if (role === "super_admin") {
     roleText.textContent = "This is your super admin dashboard. You have full system access.";
   } else {
     roleText.textContent = "This is your student dashboard. You can explore events, update your profile, and more!";
-  } */
-}); 
+  }
+});
 
 function doLogout() 
 {
   localStorage.clear();
   window.location.href = "../../index.html";
-}
+} 
