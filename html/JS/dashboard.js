@@ -21,3 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
     roleText.textContent = "This is your student dashboard. You can explore events, update your profile, and more!";
   }
 });
+
+function doLogout() 
+{
+  localStorage.clear();
+
+  window.location.href = "../../index.html";
+}
