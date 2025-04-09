@@ -65,29 +65,34 @@ main p {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  width: 100%;
 }
 
 .card {
-  margin-top: 30px;
   background-color: #2a2a40;
   padding: 25px;
-  border-radius: 15px;
+  border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+.card.wide {
+  grid-column: span 2;
 }
 
 .card h3 {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: #f5b841;
 }
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
 /* Form Styling */
 form label {
   display: block;
@@ -221,7 +226,3 @@ form button:hover {
   background-color: #c82333;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-}
