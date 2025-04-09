@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create RSO</title>
+  <link rel="stylesheet" href="addRSO.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <header>
+      <h1>Create a New RSO</h1>
+    </header>
+
+    <main>
+      <form id="createRSOForm" class="event-form">
+        <div class="form-group">
+          <label for="rsoName">RSO Name</label>
+          <input type="text" id="rsoName" name="rsoName" placeholder="Enter RSO name..." required />
+        </div>
+
+        <button type="button" class="submit-btn" onclick="createRSO()">Create RSO</button>
+
+        <p id="createRSOResult" style="margin-top: 20px;"></p>
+      </form>
+
+      <button onclick="window.location.href='../dashboard/admin.html'" class="back">← Back to Dashboard</button>
+    </main>
+  </div>
+
+  <script src="../../JS/addRSO.js"></script>
+
+</body>
+</html>
