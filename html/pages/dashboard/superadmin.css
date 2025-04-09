@@ -1,82 +1,137 @@
+/* Base reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  body {
-    background: #1e1e2f;
-    color: #fff;
-    padding: 20px;
-  }
-  
-  .dashboard-container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  header {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
-  header h1 {
-    font-size: 2.5rem;
-  }
-  
-  #user-info {
-    font-size: 1.1rem;
-    margin-top: 10px;
-    color: #ccc;
-  }
-  
-  .logout-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #f5b841;
-    color: #000;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    position: relative; /* ensure stacking context */
-    z-index: 10;
-  }
-  
-  .logout-btn:hover {
-    background-color: #ffc107;
-  }
-  
-  main h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-  }
-  
-  .card {
-    margin-top: 30px;
-    background-color: #2a2a40;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  }
-  
-  .card h3 {
-    margin-bottom: 10px;
-    color: #f5b841;
-  }
+body {
+  background: #1e1e2f;
+  color: #fff;
+  padding: 20px;
+}
 
-  
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  color: #f5b841;
+}
+
+#user-info {
+  font-size: 1.1rem;
+  margin-top: 8px;
+  color: #ccc;
+}
+
+.logout-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #f5b841;
+  color: #000;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #ffc107;
+}
+
+/* Main Content */
+main h2 {
+  font-size: 2rem;
+  color: #f5b841;
+  margin-bottom: 10px;
+}
+
+main p {
+  margin-bottom: 30px;
+  color: #bbb;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.card {
+  background-color: #2a2a40;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card.wide {
+  grid-column: span 2;
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  color: #f5b841;
+}
+
+/* Form Styling */
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 600;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  background-color: #fff;
+  color: #333;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #f5b841;
+  box-shadow: 0 0 5px #f5b841;
+}
+
+form button {
+  background-color: #f5b841;
+  color: #000;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #ffc107;
+}
+
+/* University List */
+#universities-list {
+  margin-top: 15px;
+  color: #ddd;
+}
+
+#universities-list p {
+  margin: 5px 0;
+}
