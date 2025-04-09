@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -18,7 +22,7 @@ $name = trim($inData["name"]);
 $location = trim($inData["location"]);
 $description = trim($inData["description"]);
 $num_students = intval($inData["num_students"]);
-$image = trim($inData["image"]);
+
 
 $conn = new mysqli("localhost", "knight_user", "activate!", "knightsocial");
 
@@ -28,10 +32,10 @@ if ($conn->connect_error) {
 }
 
 $stmt = $conn->prepare("
-    INSERT INTO University (name, location, description, num_students, image)
-    VALUES (?, ?, ?, ?, ?)
+    INSERT INTO University (name, location, description, num_students)
+    VALUES (?, ?, ?, ?)
 ");
-$stmt->bind_param("sssds", $name, $location, $description, $num_students, $image);
+$stmt->bind_param("sssd", $name, $location, $description, $num_students);
 $stmt->execute();
 
 if ($stmt->affected_rows > 0) {

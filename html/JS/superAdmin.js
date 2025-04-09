@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("university-form");
+    
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       addUniversity();
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const location = document.getElementById("universityLocation").value;
     const description = document.getElementById("universityDescription").value;
     const numStudents = document.getElementById("universityStudents").value;
-    const image = document.getElementById("universityImage").value;
+
   
     fetch("http://knightsocial.space/php/addUniversity.php", {
       method: "POST",
@@ -22,8 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         name,
         location,
         description,
-        num_students: parseInt(numStudents),
-        image
+        num_students: parseInt(numStudents)
       })
     })
     .then(res => res.json())
@@ -49,15 +49,18 @@ document.addEventListener("DOMContentLoaded", () => {
   
         if (data.success && data.universities.length > 0) {
           data.universities.forEach(uni => {
+
+            if (uni.name === "Super_Admin") return;
+            
             const card = document.createElement("div");
-            card.className = "event-card";
+            card.className = "university-card";
             card.innerHTML = `
-              <h4>${uni.name}</h4>
-              <p><strong>Location:</strong> ${uni.location}</p>
-              <p><strong>Description:</strong> ${uni.description}</p>
-              <p><strong>Students:</strong> ${uni.num_students}</p>
-              ${uni.image ? `<img src="${uni.image}" alt="${uni.name}" style="max-width: 100%; margin-top: 10px;" />` : ""}
-            `;
+            <h4>${uni.name}</h4>
+            <p><strong>Location:</strong> ${uni.location}</p>
+            <p><strong>Description:</strong> ${uni.description}</p>
+            <p><strong>Students:</strong> ${uni.num_students}</p>
+            <button class="delete-btn" onclick="deleteUniversity(${uni.university_id})">Delete</button>
+          `;
             container.appendChild(card);
           });
         } else {
@@ -70,3 +73,23 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
   
+
+  function deleteUniversity(universityId) {
+    if (!confirm("Are you sure you want to delete this university?")) return;
+  
+    fetch("http://knightsocial.space/php/deleteUniversity.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ university_id: universityId })
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          alert("University deleted successfully!");
+          loadUniversities();
+        } else {
+          alert("Failed to delete university: " + data.error);
+        }
+      })
+      .catch(err => alert("Error: " + err));
+  }

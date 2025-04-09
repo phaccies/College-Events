@@ -12,7 +12,7 @@
     <header>
       <h1>Welcome to Knight Social 🎓</h1>
       <p id="user-info">Hello, [User Name]! | Role: [Role]</p>
-      <a onclick="doLogout();" class="logout-btn">Log out</a>
+      
     </header>
 
     <main>
@@ -21,9 +21,13 @@
 
       <!-- Add your dashboard sections here -->
       <div class="card-grid">
-        <div class="card">
+        
+        <div onclick="window.location.href='manageuniversities.html'" class="card">
           <h3>Manage Universities</h3> 
-          <button onclick="window.location.href='manageuniversities.html'">Add or delete a university.</button>
+        </div>
+
+        <div onclick="window.location.href='superadminprofile.html'" class="card">
+          <h3>Your Profile</h3>
         </div>
         <!---
                 <div class="card">
@@ -41,6 +45,8 @@
         
       </div>
     </main>
+
+    <a onclick="doLogout();" class="logout-btn">Log out</a>
   </div>
 
   <script src="../../JS/student.js"></script>
