@@ -1,4 +1,6 @@
 <?php
+
+// looks at the user ID -> goes to the RSO Members -> filters all the RSO depending user ID -> goes to RSO table -> filters the RSO ID -> GETS ROS NAME
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
