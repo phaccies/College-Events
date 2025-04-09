@@ -222,3 +222,197 @@
   .event-item span {
     font-size: 13px;
   }
+
+
+  .comments-section {
+    background: #fffbea;
+    border-left: 4px solid #d4af37;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-top: 14px;
+    box-shadow: 0 2px 5px rgba(212, 175, 55, 0.1);
+  }
+  
+  .comments-section h5 {
+    margin: 0 0 10px;
+    color: #333;
+    font-weight: 600;
+    font-size: 16px;
+    border-bottom: 1px solid #e4d9ba;
+    padding-bottom: 4px;
+  }
+  
+  .comments-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  .comments-list li {
+    background: #fffdf4;
+    border: 1px solid #e4d9ba;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #444;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  }
+  
+  .comments-list li strong {
+    color: #b78b1e;
+    font-weight: 600;
+  }
+  
+  .comments-list li small {
+    color: #999;
+    font-size: 12px;
+  }
+
+  .toggle-comments-btn {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .toggle-comments-btn:hover {
+    background-color: #b78b1e;
+  }
+
+  .add-comment {
+    margin-top: 12px;
+    padding: 12px;
+    background: #fff9e5; /* light gold-ish background */
+    border: 1px solid #e0c97f;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .add-comment textarea {
+    width: 100%;
+    height: 60px;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: 'Poppins', sans-serif;
+    resize: none;
+  }
+  
+  .add-comment select {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 10px;
+  }
+  
+  .add-comment button {
+    background-color: #d4af37;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-comment button:hover {
+    background-color: #b89429;
+  }
+
+  .comments-list button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    margin-top: 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .comments-list button:hover {
+    background-color: #c0392b;
+  }
+
+  .comments-list button.edit-btn {
+    background-color: #3498db; /* a soft blue for edit */
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    margin-top: 6px;
+    margin-right: 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease;
+  }
+  
+  .comments-list button.edit-btn:hover {
+    background-color: #217dbb;
+  }
+
+  
+  .edit-comment-form {
+    background-color: #f5faff;
+    border: 1px solid #cce5ff;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .edit-comment-form textarea {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    resize: none;
+  }
+  
+  .edit-comment-form select {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 8px;
+    font-family: inherit;
+  }
+  
+  .edit-comment-form button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin-right: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .edit-comment-form button:hover {
+    background-color: #27ae60;
+  }
+  
+  .edit-comment-form .cancel-btn {
+    background-color: #e67e22;
+  }
+  
+  .edit-comment-form .cancel-btn:hover {
+    background-color: #cf711c;
+  }
