@@ -65,25 +65,30 @@ function loadAdminRSOs() {
 	})
 	.then(res => res.json())
 	.then(data => {
+		// If there's an error message from backend
 		if (data.error) {
 			result.innerHTML = `<li>${data.error}</li>`;
-		} else {
-			if (data.length === 0) {
-				result.innerHTML = "<li>No RSOs found.</li>";
-			} else {
-				result.innerHTML = ""; // Clear before appending
-				data.forEach(rso => {
-					const item = document.createElement("li");
-					item.textContent = rso.name;
-					result.appendChild(item);
-				});
-			}
+			return;
 		}
+
+		// If data is not an array or is empty
+		if (!Array.isArray(data) || data.length === 0) {
+			result.innerHTML = "<li>No RSOs found.</li>";
+			return;
+		}
+
+		// Populate the list with RSO names
+		data.forEach(rso => {
+			const item = document.createElement("li");
+			item.textContent = rso.name;
+			result.appendChild(item);
+		});
 	})
 	.catch(err => {
 		result.innerHTML = `<li>Fetch error: ${err.message}</li>`;
 	});
 }
+
 
 
 document.addEventListener("DOMContentLoaded", loadAdminRSOs);
