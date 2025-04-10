@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Profile – Knight Social</title>
+  <link rel="stylesheet" href="superadmin.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="dashboard-container">
+    <header>
+        <h1>Welcome to Knight Social 🎓</h1>
+        <p id="user-info">Hello, <span id="user-name">[User Name]</span>! | Role: <span id="user-role">[Role]</span></p>
+    </header>
+
+    <main>
+      <h2>Your Profile</h2>
+      <p>Update your personal information, email, or password below.</p>
+
+      <div class="card wide">
+        <form id="profile-form">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" value="" required />
+
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" value="" required />
+
+          <label for="password">New Password:</label>
+          <input type="password" id="password" name="password" placeholder="Leave blank to keep current password" />
+
+          <label for="confirm-password">Confirm New Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm new password" />
+
+          <button type="submit">Save Changes</button>
+        </form>
+      </div>
+    </main>
+
+    <a href="student.html" class="logout-btn">← Back to Dashboard</a>
+  </div>
+  <script src="../../JS/profile.js"></script>
+</body>
+</html>

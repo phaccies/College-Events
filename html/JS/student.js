@@ -28,40 +28,43 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     body: JSON.stringify({ user_id: parseInt(userId) })
   })
-  .then(res => res.json())
-  .then(data => {
-    const list = document.getElementById("rso-list");
-    if (data.rsos && data.rsos.length > 0) {
-      data.rsos.forEach(rso => {
-        const li = document.createElement("li");
-        li.classList.add("rso-item");
-      
-        const span = document.createElement("span");
-        span.textContent = `${rso.name} (${rso.status})`;
-      
-        const button = document.createElement("button");
-      
-        if (rso.joined) {
-          button.textContent = "Joined";
-          button.disabled = true;
-          button.className = "join-btn joined-btn";
-        } else {
-          button.textContent = "Join";
-          button.className = "join-btn";
-          button.onclick = () => joinRSO(rso.rso_id, button);
-        }
-      
-        li.appendChild(span);
-        li.appendChild(button);
-        list.appendChild(li);
-      });
-    } else {
-      list.innerHTML = "<li>No RSOs found for your university.</li>";
-    }
-  })
-  .catch(err => {
-    console.error("Failed to fetch RSOs:", err);
-  });
+    .then(res => res.json())
+    .then(data => {
+      const list = document.getElementById("rso-list");
+      list.innerHTML = "";
+  
+      if (data.rsos && data.rsos.length > 0) {
+        data.rsos.forEach(rso => {
+          const li = document.createElement("li");
+          li.classList.add("rso-item");
+  
+          const span = document.createElement("span");
+          span.textContent = `${rso.name} (${rso.status})`;
+  
+          const button = document.createElement("button");
+  
+          if (rso.joined) {
+            button.textContent = "Leave";
+            button.className = "leave-btn";
+            button.onclick = () => leaveRSO(rso.rso_id);
+          } else {
+            button.textContent = "Join";
+            button.className = "join-btn";
+            button.onclick = () => joinRSO(rso.rso_id, button);
+          }
+  
+          li.appendChild(span);
+          li.appendChild(button);
+          list.appendChild(li);
+        });
+      } else {
+        list.innerHTML = "<li>No RSOs found for your university.</li>";
+      }
+    })
+    .catch(err => {
+      console.error("Failed to fetch RSOs:", err);
+    });
+  
 
 
   if (userId) {
@@ -104,6 +107,28 @@ function joinRSO(rsoId, button) {
   });
 }
 
+
+function leaveRSO(rsoId, button) {
+  const userId = parseInt(localStorage.getItem("user_id"));
+
+  fetch("http://www.knightsocial.space/php/leaveRSO.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ rso_id: rsoId, user_id: userId })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      alert("You have left the RSO.");
+      location.reload();
+    } else {
+      alert("Failed to leave RSO: " + data.error);
+    }
+  })
+  .catch(err => {
+    console.error("Leave RSO failed:", err);
+  });
+}
 
 function fetchAndDisplayEvents(userId) {
   fetch("http://knightsocial.space/php/getEvents.php", {
